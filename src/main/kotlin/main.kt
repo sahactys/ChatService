@@ -1,7 +1,13 @@
-fun main(){
-val abc = mutableListOf<Person>()
-    val tim=Person("qwe","123")
-    abc.add(tim)
-    val asd = abc.indexOfFirst {it.login==tim.login }
-    println(asd)
+fun main() {
+    ChatService.createPerson("Иван")
+    ChatService.createPerson("Сергей")
+    ChatService.createPerson("Дмитрий")
+    ChatService.createChat(0,"aaa")
+    ChatService.sendMessage(0,"bbb")
+    ChatService.createChat(1,"aaa")
+    ChatService.updateMessage(0,"ccc",1)
+    ChatService.deleteMessage(5,1)
+    println(ChatService.personChats().map { it.messages })
+    println(ChatService.getUnreadChatsCount())
+
 }

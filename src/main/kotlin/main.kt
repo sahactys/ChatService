@@ -1,13 +1,11 @@
 fun main() {
     ChatService.createPerson("Иван")
     ChatService.createPerson("Сергей")
-    ChatService.createPerson("Дмитрий")
-    ChatService.createChat(0,"aaa")
-    ChatService.sendMessage(0,"bbb")
-    ChatService.createChat(1,"aaa")
-    ChatService.updateMessage(0,"ccc",1)
-    ChatService.deleteMessage(5,1)
-    println(ChatService.personChats().map { it.messages })
+    ChatService.createChat(0,"first")
+    ChatService.sendMessage(0,"dva")
+    ChatService.changeCurrentPerson(0)
+    println(ChatService.getUnreadChatsCount())
+    ChatService.getMessagesInChat(1,0,55)
     println(ChatService.getUnreadChatsCount())
 
 }
